@@ -27,7 +27,8 @@
 
 # Schritt 5:
 
-- later... 
+- Füge eine Datenbank in der DATABASE.PHP hinzu. 
+  Database-Hoster: https://www.freemysqlhosting.net/
 
 # EDIT CONFIG.PHP
 
