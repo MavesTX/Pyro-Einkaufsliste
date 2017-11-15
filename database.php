@@ -15,6 +15,18 @@
    }
    
    
+   function ausgabewert_all()
+   {
+   	
+   	global $con;
+   	$stmt = $con->prepare("SELECT SUM(anzahl * preis) FROM einkaufsliste");
+   	;
+   	$stmt->execute();
+   	$result = $stmt->fetch();
+   	echo number_format($result[0], 2, '.', ',');
+   	
+   }
+   
    
    function ausgabewert_lidl()
    {

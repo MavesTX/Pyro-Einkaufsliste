@@ -374,5 +374,6 @@
             </div>
          </div>
       </div>
+	  <button class="btn btn-success" style='margin-left: 43%; margin-top: 10px;' type="button">Ausgaben für alle Märkte: <b><?= ausgabewert_all(0); ?>€</b></button>
    </body>
 </html>
