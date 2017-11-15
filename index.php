@@ -50,36 +50,111 @@
             <div class="card">
                <div class="card-header">
                   <a class="card-link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  Collapsible Group Item #1
+                  #1 LIDL
                   </a>
                </div>
                <div id="collapseOne" class="collapse show">
                   <div class="card-body">
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                     <table class="table table-bordered">
+					 <thead>
+					 <tr>
+					 <th>Name</th>
+					 <th>Anzahl</th>
+					 <th>Preis</th>
+					 </tr>
+					 </thead>
+					 <tbody>
+					 <?php
+					$stmt = $con->prepare("SELECT * FROM einkaufsliste where markt = 'LIDL'");
+					$stmt->execute();
+					while($row = $stmt->fetch()) {
+					$name = $row['name'];
+					$anzahl = $row['anzahl'];
+					$preis = $row['preis'];
+					echo "<tr>";
+					echo "<td>$name</td>";
+					echo "<td>$anzahl x</td>";
+					echo "<td>$preis</td>";
+					echo "</tr>";
+					}
+					 ?>
+					 </tbody>
+					 </table>
+					 <button style='margin-left: 80%' type="button" class="btn btn-success">Insgesammt: <?= ausgabewert_lidl(0); ?>€</button>
                   </div>
                </div>
             </div>
             <div class="card">
                <div class="card-header">
                   <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  Collapsible Group Item #2
+                  #2 KAUFLAND
                   </a>
                </div>
                <div id="collapseTwo" class="collapse">
                   <div class="card-body">
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					<table class="table table-bordered">
+					 <thead>
+					 <tr>
+					 <th>Name</th>
+					 <th>Anzahl</th>
+					 <th>Preis</th>
+					 </tr>
+					 </thead>
+					 <tbody>
+					 <?php
+					$stmt = $con->prepare("SELECT * FROM einkaufsliste where markt = 'KAUFLAND'");
+					$stmt->execute();
+					while($row = $stmt->fetch()) {
+					$name = $row['name'];
+					$anzahl = $row['anzahl'];
+					$preis = $row['preis'];
+					echo "<tr>";
+					echo "<td>$name</td>";
+					echo "<td>$anzahl x</td>";
+					echo "<td>$preis</td>";
+					echo "</tr>";
+					}
+					 ?>
+					 </tbody>
+					 </table>
+					 <button style='margin-left: 80%' type="button" class="btn btn-success">Insgesammt: <?= ausgabewert_kaufland(0); ?>€</button>
                   </div>
                </div>
             </div>
             <div class="card">
                <div class="card-header">
                   <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  Collapsible Group Item #3
+                  #3 NORMA
                   </a>
                </div>
                <div id="collapseThree" class="collapse">
                   <div class="card-body">
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <table class="table table-bordered">
+					 <thead>
+					 <tr>
+					 <th>Name</th>
+					 <th>Anzahl</th>
+					 <th>Preis</th>
+					 </tr>
+					 </thead>
+					 <tbody>
+					 <?php
+					$stmt = $con->prepare("SELECT * FROM einkaufsliste where markt = 'NORMA'");
+					$stmt->execute();
+					while($row = $stmt->fetch()) {
+					$name = $row['name'];
+					$anzahl = $row['anzahl'];
+					$preis = $row['preis'];
+					echo "<tr>";
+					echo "<td>$name</td>";
+					echo "<td>$anzahl x</td>";
+					echo "<td>$preis</td>";
+					echo "</tr>";
+					}
+					 ?>
+					 </tbody>
+					 </table>
+					 <button style='margin-left: 80%' type="button" class="btn btn-success">Insgesammt: <?= ausgabewert_norma(0); ?>€</button>
                   </div>
                </div>
             </div>
