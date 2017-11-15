@@ -28,3 +28,12 @@
 # Schritt 5:
 
 - later... 
+
+# EDIT CONFIG.PHP
+
+# TIMER: 
+
+- Der Timer ist dazu da, seinen persönlichen Feuerwerks-Einkaufsstart festzulegen. 
+
+
+
