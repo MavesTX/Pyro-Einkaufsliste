@@ -158,42 +158,6 @@
             </div>
             <div class="card">
                <div class="card-header">
-                  <a class="collapsed card-link" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">#3 NORMA</a>
-               </div>
-               <div class="collapse" id="collapseThree">
-                  <div class="card-body">
-                     <table class="table table-bordered">
-                        <thead>
-                           <tr>
-                              <th>Name</th>
-                              <th>Anzahl</th>
-                              <th>Preis</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <?php
-                              $stmt = $con->prepare("SELECT * FROM einkaufsliste where markt = 'NORMA'");
-                              $stmt->execute();
-                              while($row = $stmt->fetch()) {
-                              $name = $row['name'];
-                              $anzahl = $row['anzahl'];
-                              $preis = $row['preis'];
-                              echo "<tr>";
-                              echo "<td>$name</td>";
-                              echo "<td>$anzahl x</td>";
-                              echo "<td>$preis €</td>";
-                              echo "</tr>";
-                              }
-                               ?>
-                        </tbody>
-                     </table>
-                     <button class="btn btn-success" style='margin-left: 80%' type="button">Insgesamt: <?= ausgabewert_norma(0); ?>
-                     €</button>
-                  </div>
-               </div>
-            </div>
-            <div class="card">
-               <div class="card-header">
                   <a class="collapsed card-link" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">#4 ALDI</a>
                </div>
                <div class="collapse" id="collapseFour">
