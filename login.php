@@ -2,27 +2,27 @@
 <?php include_once("functions.php"); ?>
 <?php include_once("config.php"); ?>
 <?php
-if(isset($_POST['username'], $_POST['password'])){
+session_start();
+if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
     $hashed_password = hash($HashValue,$password);
-    $stmt = $con->prepare("SELECT user_id FROM accounts WHERE username=BINARY(:xname) AND password=:xpass LIMIT 1");
+    $stmt = $con->prepare("SELECT id FROM accounts WHERE username=BINARY(:xname) AND password=:xpass LIMIT 1");
     $stmt->bindParam(':xname', $username);
     $stmt->bindParam(':xpass', $hashed_password);
     $stmt->execute();
     $result = $stmt->fetch();
 
     if($result == false){
-        $errormsg = "<div class='alert alert-danger'><b>Fehler</b></div>";
-    } else {
-        $_SESSION['userID'] = $result['user_id'];
-        $_SESSION['username'] = $_POST['username'];
-        header("Location: index.php");
+        $errormsg = "Fehler";
+    }else{
+        $_SESSION['userID'] = $result['id'];
+        $_SESSION['username'] = $username;
+        header("Location: /index.php");
         exit();
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html>

@@ -11,6 +11,11 @@ function ausgabewert_all()
 
 }
 
+function showUsername()
+{
+        echo '<pb><strong style="color: #190707; text-shadow: #A4A4A4 1px 1px 30px;">Hallo, <u>'.$_SESSION['username'].'</u></strong></pb>';
+}
+
 
 function ausgabewert_lidl()
 {
