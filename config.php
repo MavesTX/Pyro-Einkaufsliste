@@ -14,4 +14,9 @@ $secounds 	= "00"; // Sekunden 00 - 60
 
 $end_message = "Viel Spaß beim Einkaufen!";
 
+
+
+
+$HashValue = "SHA512";
+
 ?>
